@@ -1,0 +1,29 @@
+//buat program search name yang menerapkan callback function
+let names = [
+  "abigail",
+  "alexandra",
+  "alison",
+  "amanda",
+  "angela",
+  "bella",
+  "carol",
+  "caroline",
+  "carolyn",
+  "derfe",
+  "diana",
+  "elizabeth",
+];
+
+function callback(name) {
+  return name.includes("an");
+}
+
+function SearchName(n, callback) {
+  const last = [];
+  const newnama = names.filter(callback);
+  for (i = 0; i < n; i++) {
+    last.push(newnama[i]);
+  }
+  console.info(last);
+}
+SearchName(3, callback);
