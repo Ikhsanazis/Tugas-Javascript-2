@@ -1,0 +1,27 @@
+let dataAwal = 1;
+let dataAkhir = 30;
+let dataArray = [7, 8, 9, 10, 20];
+
+const databaru = [];
+databaru.push(dataAwal);
+databaru.push(dataArray);
+databaru.push(dataAkhir);
+console.log(databaru);
+
+databaru.sort(function (a, b) {
+  return a - b;
+});
+
+if (dataAwal > dataAkhir) {
+  console.log(`nilai awal harus lebih kecil dari nilai akhir`);
+} else if (dataArray.length <= 5) {
+  console.log("jumlah data array harus lebih dari 5");
+}
+
+for (i = 0; i < dataArray.length; i++) {
+  if (dataArray[i] < dataAwal) {
+    console.log(`data pada indeks ${i} lebih kecil dari nilai awal`);
+  } else if (dataArray[i] > dataAkhir) {
+    console.log(`ganti indeks  ${i}`);
+  }
+}
