@@ -14,7 +14,8 @@ databaru.sort(function (a, b) {
 
 if (dataAwal > dataAkhir) {
   console.log(`Nilai Akhir harus lebih besar dari Nilai Awal`);
-} else if (dataArray.length <= 5) {
+}
+if (dataArray.length <= 5) {
   console.log("jumlah angka dalam data array harus lebih dari 5");
 }
 
