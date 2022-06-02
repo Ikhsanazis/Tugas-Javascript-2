@@ -13,15 +13,13 @@ databaru.sort(function (a, b) {
 });
 
 if (dataAwal > dataAkhir) {
-  console.log(`nilai awal harus lebih kecil dari nilai akhir`);
+  console.log(`Nilai Akhir harus lebih besar dari Nilai Awal`);
 } else if (dataArray.length <= 5) {
-  console.log("jumlah data array harus lebih dari 5");
+  console.log("jumlah angka dalam data array harus lebih dari 5");
 }
 
 for (i = 0; i < dataArray.length; i++) {
-  if (dataArray[i] < dataAwal) {
-    console.log(`data pada indeks ${i} lebih kecil dari nilai awal`);
-  } else if (dataArray[i] > dataAkhir) {
-    console.log(`ganti indeks  ${i}`);
+  if (dataArray[i] < dataAwal || dataArray[i] > dataAkhir) {
+    console.log(`data pada indeks ${i} harus < indeksAwal atau > indeks akhir`);
   }
 }
