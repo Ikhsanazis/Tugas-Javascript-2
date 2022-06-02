@@ -1,0 +1,51 @@
+// buat 10 method funcyion pada javascript
+const name = "ikhsan azis pane";
+
+console.log(name.length);
+//1
+console.log(name.toLowerCase());
+// 2
+console.log(name.toUpperCase());
+console.log(name.split(" "));
+
+const input = "    M. Ikhsan Azis Pane   ";
+// 3
+console.log(input.trim());
+
+const value = "1.02345";
+//4
+const newValue = parseInt(value);
+//5
+const newValue2 = Number(value);
+console.log(typeof newValue);
+console.log(newValue2);
+
+const newstring = "saya belajar javascript hingga mahir";
+//6
+console.log(newstring.charAt(5));
+//7
+console.log(newstring.includes("javascript"));
+//8
+console.log(newstring.indexOf("saya"));
+//9
+console.log(newstring.search("saya"));
+//10
+console.log(newstring.slice("saya"));
+
+const array = [];
+array.push("azis");
+array.push("ikhsan");
+array.pop();
+array.unshift("pen");
+array.unshift("M");
+array.shift();
+console.log(array);
+
+var angka = [1, 2, 4, 7, 5, 6, 9, 8, 10];
+var urutan = angka.sort(function (a, b) {
+  return a - b;
+});
+console.log(urutan);
+
+let kopi = "namanya kopi toh";
+console.log(kopi.replace(/o/g, "e"));
