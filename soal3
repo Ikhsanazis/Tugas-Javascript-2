@@ -1,6 +1,6 @@
-let dataAwal = 1;
-let dataAkhir = 30;
-let dataArray = [7, 8, 9, 10, 20];
+let dataAwal = Number(1);
+let dataAkhir = Number(30);
+let dataArray = Number([7, 8, 9, 10, 20]);
 
 const databaru = [];
 databaru.push(dataAwal);
