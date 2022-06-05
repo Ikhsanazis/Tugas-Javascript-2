@@ -14,16 +14,23 @@ let names = [
   "elizabeth",
 ];
 
-function callback(name) {
-  return name.includes("an");
+function callback(array, kode) {
+  let newname = [];
+  for (i = 0; i < array.length; i++) {
+    if (array[i].includes(kode)) {
+      newname.push(array[i]);
+    }
+  }
+  return newname;
 }
 
-function SearchName(n, callback) {
-  const last = [];
-  const newnama = names.filter(callback);
+function searchName(kode, array, n, callback) {
+  const newarray = callback(array, kode);
+  let final = [];
   for (i = 0; i < n; i++) {
-    last.push(newnama[i]);
+    final.push(newarray[i]);
   }
-  console.info(last);
+  return final;
 }
-SearchName(3, callback);
+
+console.log(searchName("an", nama, 3, callback));
