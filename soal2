@@ -25,16 +25,26 @@ function callback(array, kode) {
       newname.push(array[i]);
     }
   }
+  console.log(newname);
+  if (newname.length == 0) {
+    console.log(`tidak ditemukan`);
+  }
   return newname;
 }
 
 function searchName(kode, array, n, callback) {
   const newarray = callback(array, kode);
-  let final = [];
-  for (i = 0; i < n; i++) {
-    final.push(newarray[i]);
+
+  if (newarray.length > 0 && newarray.length < n) {
+    console.log(`hasil yang ditemukan kurang dari ${n}`);
+  } else {
+    let final = [];
+
+    for (i = 0; i < n; i++) {
+      final.push(newarray[i]);
+    }
+    console.log(final);
   }
-  return final;
 }
 
-console.log(searchName("an", nama, 3, callback));
+searchName("an", nama, 3, callback);
