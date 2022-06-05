@@ -1,23 +1,22 @@
-// buat 10 method funcyion pada javascript
+// Built-in method pada Javascript
 const name = "ikhsan azis pane";
 
-console.log(name.length);
-console.log(name.toLowerCase());
-console.log(name.toUpperCase());
+console.log(name.length);         
+console.log(name.toLowerCase());  
+console.log(name.toUpperCase());  
 
 const input = "    M. Ikhsan Azis Pane   ";
-console.log(input.trim());
-console.log(input.trimEnd());
+console.log(input.trim());        
+console.log(input.trimEnd());     
 
 const value = "1.02345";
-const newValue = parseInt(value);
-const newValue2 = Number(value);
-console.log(typeof newValue);
-
+const newValue = parseInt(value); 
+const newValue2 = Number(value);  
+console.log(typeof newValue);     
 
 const newstring = "saya belajar javascript hingga mahir";
-console.log(newstring.charAt(5));
-console.log(newstring.includes("javascript"));
+console.log(newstring.charAt(5));              
+console.log(newstring.includes("javascript"));  
 console.log(newstring.indexOf("saya"));
 console.log(newstring.search("saya"));
 
