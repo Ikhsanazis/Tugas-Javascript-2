@@ -30,11 +30,13 @@ function callback(array, kode) {
 
 function searchName(kode, array, n, callback) {
   const newarray = callback(array, kode);
-  let final = [];
-  for (i = 0; i < n; i++) {
-    final.push(newarray[i]);
+
+  if (newarray.length > 0 && newarray.length < n) {
+    console.log(`hasil yang ditemukan kurang dari ${n}`);
+  } else {
+    newarray.splice(n, newarray.length - 1);
+    console.log(newarray);
   }
-  return final;
 }
 
 console.log(searchName("an", nama, 3, callback));
