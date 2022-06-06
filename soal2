@@ -14,26 +14,28 @@ let names = [
   "elizabeth",
 ];
 
-function callback(array, kode) {
-  var array = array.map(String);
-  var array = array.map((element) => {
-    return element.toLowerCase();
-  });
+function callback(array, keyword) {
+  if (array.length == 0) {
+    console.log(`Masukan data array`); //apabila keyword tidak ditemukan
+  } else {
+    var array = array.map(String); //mengubah komponen array menjadi string
+    var array = array.map((element) => {
+      return element.toLowerCase(); //mengubah karakter menjadi hururf kecil
+    });
+  }
   let newname = [];
+
+  //mencari keyword pada array
   for (i = 0; i < array.length; i++) {
-    if (array[i].includes(kode)) {
+    if (array[i].includes(keyword.toLowerCase())) {
       newname.push(array[i]);
     }
-  }
-  console.log(newname);
-  if (newname.length == 0) {
-    console.log(`tidak ditemukan`);
   }
   return newname;
 }
 
-function searchName(kode, array, n, callback) {
-  const newarray = callback(array, kode);
+function searchName(keyword, array, n, callback) {
+  const newarray = callback(array, keyword);
 
   if (newarray.length > 0 && newarray.length < n) {
     console.log(`hasil yang ditemukan kurang dari ${n}`);
