@@ -1,40 +1,55 @@
 //buat program search name yang menerapkan callback function
-let names = [
-  "abigail",
-  "alexandra",
-  "alison",
-  "amanda",
-  "angela",
-  "bella",
-  "carol",
-  "caroline",
-  "carolyn",
-  "derfe",
-  "diana",
-  "elizabeth",
+let nama = [
+  "Anthony",
+  "Lewis",
+  "Selene",
+  "Novo",
+  "samuel",
+  "aNgela",
+  "Campbell",
+  "DeaN",
+  "San",
 ];
 
-function callback(array, kode) {
-  var array = array.map(String);
-  var array = array.map((element) => {
-    return element.toLowerCase();
-  });
-  let newname = [];
-  for (i = 0; i < array.length; i++) {
-    if (array[i].includes(kode)) {
-      newname.push(array[i]);
-    }
+let anggota = [];
+
+function callback(keyword, array, limit) {
+  if (array.length == 0) {
+    console.log(`Periksa Input array`);
+  } else if (typeof limit != typeof 3) {
+    console.log(`Periksa Input limit`);
+  } else {
+    var array = array.map(String).map((element) => element.toLowerCase());
+    console.log(`ini : ${array}`);
   }
-  return newname;
+  console.log(array);
+
+  let findKeyword = array.filter((array) =>
+    array.includes(keyword.toLowerCase())
+  )
+  return findKeyword;
 }
 
-function searchName(kode, array, n, callback) {
-  const newarray = callback(array, kode);
-  let final = [];
-  for (i = 0; i < n; i++) {
-    final.push(newarray[i]);
+function searchName(keyword, array, limit, callback) {
+  const newarray = callback(keyword, array, limit);
+  if (newarray.length == 0) {
+    return;
+  } else {
+    newarray.splice(limit, newarray.length - 1);
+    console.log(newarray);
   }
-  return final;
 }
 
-console.log(searchName("an", nama, 3, callback));
+console.log(`------------------------------------`);
+console.log(`kondisi 1 : Mencari keyword An dengan jumlah 3`);
+searchName("An", nama, 3, callback);
+console.log(`------------------------------------`);
+console.log(`Kondisi 2 : Mencari keyword an jumlah 10`);
+searchName("an", nama, 10, callback);
+console.log(`------------------------------------`);
+console.log(`Kondisi 3 : Mencari keyword EL dengan jumlah 3`);
+searchName("eL", nama, "a", callback);
+console.log(`------------------------------------`);
+console.log(`Kondisi 4 : data array kosong`);
+searchName("eL", anggota, 3, callback);
+console.log(`------------------------------------`);
