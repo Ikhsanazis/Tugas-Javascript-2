@@ -1,33 +1,35 @@
 function call(dataAwal, dataAkhir, dataArray) {
-  var dataAwal = Number(dataAwal);
-  var dataAkhir = Number(dataAkhir);
-  var dataArray = dataArray;
-
-  const databaru = [];
+  //membuat array baru
+  var databaru = [];
   databaru.push(dataAwal);
   databaru.push(dataAkhir);
   databaru.push(dataArray);
-  console.log(databaru);
+  //console.log(databaru);
+  var databaru = databaru.map((number) => Number(number));
+  //mengurutkan komponen array
+  var dataArray = dataArray.sort((a, b) => a - b);
 
-  if (dataArray.length <= 5) {
-    console.log("jumlah angka dalam data array harus lebih dari 5");
-  }
-
+  //pengecekan nilai akhir dan nilai awal
   if (dataAwal > dataAkhir) {
     console.log(`Nilai Akhir harus lebih besar dari Nilai Awal`);
   }
-
-  let dataBaru = [];
-  for (i = 0; i < dataArray.length; i++) {
-    if (dataArray[i] > dataAwal && dataArray[i] < dataAkhir) {
-      dataBaru.push(dataArray[i]);
-    }
-  }
-
-  if (dataBaru.length > 0) {
-    console.log(dataBaru);
+  //inoput data array harus lebih dari 5
+  else if (dataArray.length <= 5) {
+    console.log("jumlah angka dalam data array harus lebih dari 5");
   } else {
-    console.log(`tidak ditemukan`);
+    //pengecekan apakah data array berada pada range yang sesuai
+    var dataBaru = [];
+    for (i = 0; i < dataArray.length; i++) {
+      if (dataArray[i] > dataAwal && dataArray[i] < dataAkhir) {
+        dataBaru.push(dataArray[i]);
+      }
+    }
+    //hasil dan statemen akhir
+    if (dataBaru.length > 0) {
+      console.log(dataBaru);
+    } else {
+      console.log(`tidak ditemukan`);
+    }
   }
 }
 
