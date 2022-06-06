@@ -1,39 +1,36 @@
-// Built-in method pada Javascript
-const name = "ikhsan azis pane";
+// Buat 10 method function pada javascript
 
-console.log(name.length);         
-console.log(name.toLowerCase());  
-console.log(name.toUpperCase());  
+let contoh = "ikhsan azis pane";
+//1 mengubah karakter menjadi huruf kecil
+console.log(contoh.toLowerCase()); //output ikhsan azis pane
+// 2 mengubah karakter menjadi huruf besar
+console.log(contoh.toUpperCase()); //output IKHSAN AZIS PANE
 
 const input = "    M. Ikhsan Azis Pane   ";
-console.log(input.trim());        
-console.log(input.trimEnd());     
+// 3 merapikan karakter spasi
+console.log(input.trim()); //output M. Ikhsan Azis Pane
 
 const value = "1.02345";
-const newValue = parseInt(value); 
-const newValue2 = Number(value);  
-console.log(typeof newValue);     
-
-const newstring = "saya belajar javascript hingga mahir";
-console.log(newstring.charAt(5));              
-console.log(newstring.includes("javascript"));  
-console.log(newstring.indexOf("saya"));
-console.log(newstring.search("saya"));
+//4 mengubah nilai menjadi integer
+const newValue = parseInt(value);
+console.log(newValue); //output 1
+//5 mengubah nilai menjadi number
+const newValue2 = Number(value);
+console.log(newValue2); //ouput 1.02345
+//6 menampilkan tipe data
+console.log(typeof newValue); //output number
 
 const array = [];
+//7 menambahkan komponen array setelah index terakhir
 array.push("azis");
 array.push("ikhsan");
+console.log(array); //output [ 'azis', 'ikhsan' ]
+//8 menghapus komponen array indeks terakhir
 array.pop();
-array.unshift("pen");
-array.unshift("M");
+console.log(array); //ouput [ 'azis' ]
+//9 menambahkan komponen array indeks pertama
+array.unshift("Muhammad");
+console.log(array); //ouput [ 'Muhammad', 'azis' ]
+//10 menghapus komponen array pada indeks pertama
 array.shift();
-console.log(array);
-
-var angka = [1, 2, 4, 7, 5, 6, 9, 8, 10];
-var urutan = angka.sort(function (a, b) {
-  return a - b;
-});
-console.log(urutan);
-
-let kopi = "kopikopiko";
-console.log(kopi.replace(/o/g, "a"));
+console.log(array); //ouput [ 'azis' ]
